@@ -1,0 +1,131 @@
+#include <stdio.h>
+
+// Definição da estrutura para armazenar os dados da carta
+struct Carta {
+    char Carta[50];         
+    char Estado[50];     
+    char Codigo[50];      
+    char NomeCidade[50];     
+    float Populacao;       
+    float AreaKm2;               
+    float PIB;                  
+    int PontosTuristicos;         
+};
+
+// Função para limpar o buffer de entrada
+void limparBuffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
+
+int main() {
+    // Declaração de duas cartas
+    struct Carta carta1, carta2;
+    float DensidadePopulacional1, DensidadePopulacional2;
+    float PibPerCapita1, PibPerCapita2;
+
+    // Inserindo os dados da primeira carta
+    printf("Insira os dados da primeira carta:\n");
+
+    printf("Carta: ");
+    scanf(" %49[^\n]", carta1.Carta);
+    limparBuffer();
+
+    printf("Estado: ");
+    scanf(" %49[^\n]", carta1.Estado);
+    limparBuffer();
+
+    printf("Código da carta: ");
+    scanf(" %49[^\n]", carta1.Codigo);
+    limparBuffer();
+
+    printf("Nome da cidade: ");
+    scanf(" %49[^\n]", carta1.NomeCidade);
+    limparBuffer();
+
+    printf("População: ");
+    scanf("%f", &carta1.Populacao);
+    limparBuffer();
+
+    printf("Área (em Km²): ");
+    scanf("%f", &carta1.AreaKm2);
+    limparBuffer();
+
+    printf("PIB: ");
+    scanf("%f", &carta1.PIB);
+    limparBuffer();
+
+    printf("Número de pontos turísticos: ");
+    scanf("%d", &carta1.PontosTuristicos);
+    limparBuffer();
+
+    // Cálculo da Densidade Populacional e PIB per capita para a primeira carta
+    DensidadePopulacional1 = carta1.Populacao / carta1.AreaKm2;
+    PibPerCapita1 = carta1.PIB / carta1.Populacao;
+
+    // Inserindo os dados da segunda carta
+    printf("\nInsira os dados da segunda carta:\n");
+
+    printf("Carta: ");
+    scanf(" %49[^\n]", carta2.Carta);
+    limparBuffer();
+
+    printf("Estado: ");
+    scanf(" %49[^\n]", carta2.Estado);
+    limparBuffer();
+
+    printf("Código da carta: ");
+    scanf(" %49[^\n]", carta2.Codigo);
+    limparBuffer();
+
+    printf("Nome da cidade: ");
+    scanf(" %49[^\n]", carta2.NomeCidade);
+    limparBuffer();
+
+    printf("População: ");
+    scanf("%f", &carta2.Populacao);
+    limparBuffer();
+
+    printf("Área (em Km²): ");
+    scanf("%f", &carta2.AreaKm2);
+    limparBuffer();
+
+    printf("PIB: ");
+    scanf("%f", &carta2.PIB);
+    limparBuffer();
+
+    printf("Número de pontos turísticos: ");
+    scanf("%d", &carta2.PontosTuristicos);
+    limparBuffer();
+
+    // Cálculo da Densidade Populacional e PIB per capita para a segunda carta
+    DensidadePopulacional2 = carta2.Populacao / carta2.AreaKm2;
+    PibPerCapita2 = carta2.PIB / carta2.Populacao;
+
+    // Exibindo os dados inseridos
+    printf("\nDados da primeira carta:\n");
+    printf("Carta: %s\n", carta1.Carta);
+    printf("Estado: %s\n", carta1.Estado);
+    printf("Código da carta: %s\n", carta1.Codigo);
+    printf("Nome da cidade: %s\n", carta1.NomeCidade);
+    printf("População: %.2f\n", carta1.Populacao);
+    printf("Área: %.2f Km²\n", carta1.AreaKm2);
+    printf("PIB: %.2f\n", carta1.PIB);
+    printf("Número de pontos turísticos: %d\n", carta1.PontosTuristicos);
+    printf("Densidade Populacional: %.2f hab/km²\n", DensidadePopulacional1);
+    printf("PIB per Capita: %.2f\n", PibPerCapita1);
+
+    printf("\nDados da segunda carta:\n");
+    printf("Carta: %s\n", carta2.Carta);
+    printf("Estado: %s\n", carta2.Estado);
+    printf("Código da carta: %s\n", carta2.Codigo);
+    printf("Nome da cidade: %s\n", carta2.NomeCidade);
+    printf("População: %.2f\n", carta2.Populacao);
+    printf("Área: %.2f Km²\n", carta2.AreaKm2);
+    printf("PIB: %.2f\n", carta2.PIB);
+    printf("Número de pontos turísticos: %d\n", carta2.PontosTuristicos);
+    printf("Densidade Populacional: %.2f hab/km²\n", DensidadePopulacional2);
+    printf("PIB per Capita: %.2f\n", PibPerCapita2);
+
+    return 0;
+}
