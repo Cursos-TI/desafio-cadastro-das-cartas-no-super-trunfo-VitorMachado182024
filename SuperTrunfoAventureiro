@@ -12,12 +12,6 @@ struct Carta {
     int PontosTuristicos;         
 };
 
-// Função para limpar o buffer de entrada
-void limparBuffer() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF);
-}
-
 int main() {
     // Declaração de duas cartas
     struct Carta carta1, carta2;
@@ -25,82 +19,58 @@ int main() {
     float PibPerCapita1, PibPerCapita2;
 
     // Inserindo os dados da primeira carta
-    printf("Insira os dados da primeira carta:\n");
+   printf("Insira os dados da primeira carta:\n");
 
-    printf("Carta: ");
-    scanf(" %49[^\n]", carta1.Carta);
-    limparBuffer();
+   printf("Carta: ");
+   scanf("%s", carta1.Carta);
 
-    printf("Estado: ");
-    scanf(" %49[^\n]", carta1.Estado);
-    limparBuffer();
+   printf("Estado: ");
+   scanf("%s", carta1.Estado);
 
-    printf("Código da carta: ");
-    scanf(" %49[^\n]", carta1.Codigo);
-    limparBuffer();
+   printf("Código da carta: ");
+   scanf("%s", carta1.Codigo);
 
-    printf("Nome da cidade: ");
-    scanf(" %49[^\n]", carta1.NomeCidade);
-    limparBuffer();
+   printf("Nome da cidade: ");
+   scanf("%s", carta1.NomeCidade);
 
-    printf("População: ");
-    scanf("%f", &carta1.Populacao);
-    limparBuffer();
+   printf("População: ");
+   scanf("%f", &carta1.Populacao);
 
-    printf("Área (em Km²): ");
-    scanf("%f", &carta1.AreaKm2);
-    limparBuffer();
+   printf("Área (em Km²): ");
+   scanf("%f", &carta1.AreaKm2);
 
-    printf("PIB: ");
-    scanf("%f", &carta1.PIB);
-    limparBuffer();
+   printf("PIB: ");
+   scanf("%f", &carta1.PIB);
 
-    printf("Número de pontos turísticos: ");
-    scanf("%d", &carta1.PontosTuristicos);
-    limparBuffer();
+   printf("Número de pontos turísticos: ");
+   scanf("%d", &carta1.PontosTuristicos);
 
-    // Cálculo da Densidade Populacional e PIB per capita para a primeira carta
-    DensidadePopulacional1 = carta1.Populacao / carta1.AreaKm2;
-    PibPerCapita1 = carta1.PIB / carta1.Populacao;
+   // Inserindo os dados da segunda carta
+   printf("\nInsira os dados da segunda carta:\n");
 
-    // Inserindo os dados da segunda carta
-    printf("\nInsira os dados da segunda carta:\n");
+   printf("Carta: ");
+   scanf("%s", carta2.Carta);
 
-    printf("Carta: ");
-    scanf(" %49[^\n]", carta2.Carta);
-    limparBuffer();
+   printf("Estado: ");
+   scanf("%s", carta2.Estado);
 
-    printf("Estado: ");
-    scanf(" %49[^\n]", carta2.Estado);
-    limparBuffer();
+   printf("Código da carta: ");
+   scanf("%s", carta2.Codigo);
 
-    printf("Código da carta: ");
-    scanf(" %49[^\n]", carta2.Codigo);
-    limparBuffer();
+   printf("Nome da cidade: ");
+   scanf("%s", carta2.NomeCidade);
 
-    printf("Nome da cidade: ");
-    scanf(" %49[^\n]", carta2.NomeCidade);
-    limparBuffer();
+   printf("População: ");
+   scanf("%f", &carta2.Populacao);
 
-    printf("População: ");
-    scanf("%f", &carta2.Populacao);
-    limparBuffer();
+   printf("Área (em Km²): ");
+   scanf("%f", &carta2.AreaKm2);
 
-    printf("Área (em Km²): ");
-    scanf("%f", &carta2.AreaKm2);
-    limparBuffer();
+   printf("PIB: ");
+   scanf("%f", &carta2.PIB);
 
-    printf("PIB: ");
-    scanf("%f", &carta2.PIB);
-    limparBuffer();
-
-    printf("Número de pontos turísticos: ");
-    scanf("%d", &carta2.PontosTuristicos);
-    limparBuffer();
-
-    // Cálculo da Densidade Populacional e PIB per capita para a segunda carta
-    DensidadePopulacional2 = carta2.Populacao / carta2.AreaKm2;
-    PibPerCapita2 = carta2.PIB / carta2.Populacao;
+   printf("Número de pontos turísticos: ");
+   scanf("%d", &carta2.PontosTuristicos);
 
     // Exibindo os dados inseridos
     printf("\nDados da primeira carta:\n");
